@@ -10,12 +10,12 @@ public class Siba implements Dog, Cuterble {
 	
 	@Override
 	public void bark() {
-		System.out.printf("%s는 짖습니다!! 멍멍!", name);
+		System.out.printf("%s는 짖습니다!! 멍멍!\n", name);
 	}
 
 	@Override
 	public void ang() {
-		System.out.printf("%s는 애교를 부립니다.!!", name);
+		System.out.printf("%s는 애교를 부립니다.!!\n", name);
 		
 	}
 
