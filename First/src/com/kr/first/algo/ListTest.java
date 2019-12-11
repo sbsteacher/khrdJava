@@ -8,8 +8,7 @@ public class ListTest {
 		list.add("b");
 		list.add("c");
 		list.add("d");
-		list.removeFirstOne();
-		list.removeFirstOne();
+		list.remove(1);
 		list.printAll2();
 	
 

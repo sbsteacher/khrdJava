@@ -49,4 +49,12 @@ public class CustomList {
 		list = temp;
 	}
 	
+	public void removeFirstOne() {
+		String[] temp = new String[list.length - 1];
+		for(int i=0; i<temp.length; i++) {
+			temp[i] = list[i+1];
+		}
+		list = temp;
+	}
+	
 }
