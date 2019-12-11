@@ -15,19 +15,38 @@ public class CustomList {
 		int oldLen = list.length;
 		String[] temp = new String[oldLen + 1];
 		
-		if(list.length > 0) {
-			for(int i=0; i<list.length; i++) {
-				temp[i] = list[i];
-			}
-		}		
+		for(int i=0; i<list.length; i++) {
+			temp[i] = list[i];
+		}
+				
 		temp[oldLen] = val;
 		list = temp;
 	}
 	
 	public void printAll() {
-		for(String val : list) {
-			System.out.println(val);
+		for(int i=0; i<list.length; i++) {
+			System.out.print(list[i]);
+			if(list.length > i + 1) {
+				System.out.print(", ");	
+			}
 		}
+	}
+	
+	public void printAll2() {
+		for(int i=0; i<list.length; i++) {
+			if(i != 0) {
+				System.out.print(", ");	
+			}
+			System.out.print(list[i]);
+		}
+	}
+	
+	public void removeLastOne() {
+		String[] temp = new String[list.length - 1];
+		for(int i=0; i<temp.length; i++) {
+			temp[i] = list[i];
+		}
+		list = temp;
 	}
 	
 }
