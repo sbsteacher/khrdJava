@@ -8,9 +8,10 @@ public class ListTest {
 		list.add("b");
 		list.add("c");
 		list.add("d");
-		list.remove(1);
+		list.add("e");		
+		list.add(1, "T");
 		list.printAll2();
-	
+		//a, T, b, c, d, e
 
 	}
 

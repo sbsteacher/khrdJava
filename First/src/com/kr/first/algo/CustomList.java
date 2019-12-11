@@ -42,6 +42,8 @@ public class CustomList {
 	}
 	
 	public void removeLastOne() {
+		if(list.length == 0) return;
+		
 		String[] temp = new String[list.length - 1];
 		for(int i=0; i<temp.length; i++) {
 			temp[i] = list[i];
@@ -50,6 +52,8 @@ public class CustomList {
 	}
 	
 	public void removeFirstOne() {
+		if(list.length == 0) return;
+	
 		String[] temp = new String[list.length - 1];
 		for(int i=0; i<temp.length; i++) {
 			temp[i] = list[i+1];
@@ -57,4 +61,38 @@ public class CustomList {
 		list = temp;
 	}
 	
+	public void remove(int idx) {
+		if(list.length == 0) return;
+		
+		String[] temp = new String[list.length - 1];
+		for(int i=0; i<temp.length; i++) {
+			if(i < idx) {
+				temp[i] = list[i];	
+			} else {
+				temp[i] = list[i+1];
+			}
+		}
+		list = temp;
+	}
+	
+	public void add(int idx, String val) {
+		String[] temp = new String[list.length + 1];
+		
+		for(int i=0; i<temp.length;i++) {
+			if(i < idx) {
+				temp[i] = list[i];
+			} else if(i == idx) {
+				temp[i] = val;
+			} else {
+				temp[i] = list[i-1];
+			}
+		}
+		list = temp;
+	}
+	
+	
 }
+
+
+
+
