@@ -10,7 +10,11 @@ public class ListTest {
 		list.add("d");
 		list.add("e");		
 		list.add(1, "T");
-		list.printAll2();
+		list.clear();
+		
+		String val = list.get(2);
+		System.out.println(val);
+		
 		//a, T, b, c, d, e
 
 	}

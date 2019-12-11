@@ -81,8 +81,10 @@ public class CustomList {
 		for(int i=0; i<temp.length;i++) {
 			if(i < idx) {
 				temp[i] = list[i];
+				
 			} else if(i == idx) {
 				temp[i] = val;
+				
 			} else {
 				temp[i] = list[i-1];
 			}
@@ -90,7 +92,13 @@ public class CustomList {
 		list = temp;
 	}
 	
+	public String get(int idx) {
+		return list[idx];
+	}
 	
+	public void clear() {
+		list = new String[0];
+	}
 }
 
 
