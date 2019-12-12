@@ -37,11 +37,20 @@ public class NumberBaseballGame {
 	
 	private void inputValueAndCheck() {
 		Scanner scan = new Scanner(System.in);
-		for(int i=0; i<myArr.length; i++) {
+		
+		PARENT: for(int i=0; i<myArr.length; i++) {
 			System.out.printf("숫자 (%d) :", (i+1));
 			int no = Utils.parseStringToInt(scan.next(), 0);
-			if(no > 0 && no < 10) {
+			if(no > 0 && no < 10) {				
+				for(int z=0; z<myArr.length; z++) {
+					if(no == myArr[z]) {				
+						i--;
+						System.out.println("중복된 값이 있습니다!");
+						continue PARENT;
+					}
+				}				
 				myArr[i] = no;
+				
 			} else {
 				i--;
 				System.out.println("1~9 사이의 값을 입력해 주세요!");
