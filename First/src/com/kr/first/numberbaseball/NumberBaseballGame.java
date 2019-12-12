@@ -1,11 +1,13 @@
 package com.kr.first.numberbaseball;
 
+import java.util.Scanner;
+
 public class NumberBaseballGame {
 	
 	private int[] rArr;
 	private int[] myArr;
 	
-	public NumberBaseballGame(int gameLen) {		
+	public NumberBaseballGame(int gameLen) {
 		rArr = new int[gameLen];
 		myArr = new int[gameLen];
 	}
@@ -27,12 +29,35 @@ public class NumberBaseballGame {
 		}
 		
 		for(int i : rArr) {
-			System.out.println(i);
+			System.out.print(i + ", ");
 		}
+		System.out.println();
+	}
+	
+	
+	private void inputValueAndCheck() {
+		Scanner scan = new Scanner(System.in);
+		for(int i=0; i<myArr.length; i++) {
+			System.out.printf("숫자 (%d) :", (i+1));
+			int no = Utils.parseStringToInt(scan.next(), 0);
+			if(no > 0 && no < 10) {
+				myArr[i] = no;
+			} else {
+				i--;
+				System.out.println("1~9 사이의 값을 입력해 주세요!");
+			}			
+		}
+		
+		for(int i : myArr) {
+			System.out.print(i + ", ");
+		}
+		System.out.println();
+		scan.close();
 	}
 	
 	public void gameStart() {
 		setRandomArr();
+		inputValueAndCheck();
 	}
 }
 
