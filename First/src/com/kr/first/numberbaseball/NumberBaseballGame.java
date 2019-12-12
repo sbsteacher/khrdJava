@@ -6,8 +6,10 @@ public class NumberBaseballGame {
 	
 	private int[] rArr;
 	private int[] myArr;
+	private Scanner scan;
 	
 	public NumberBaseballGame(int gameLen) {
+		scan = new Scanner(System.in);
 		rArr = new int[gameLen];
 		myArr = new int[gameLen];
 	}
@@ -35,9 +37,7 @@ public class NumberBaseballGame {
 	}
 	
 	
-	private void inputValueAndCheck() {
-		Scanner scan = new Scanner(System.in);
-		
+	private void inputValue() {
 		PARENT: for(int i=0; i<myArr.length; i++) {
 			System.out.printf("숫자 (%d) :", (i+1));
 			int no = Utils.parseStringToInt(scan.next(), 0);
@@ -56,17 +56,25 @@ public class NumberBaseballGame {
 				System.out.println("1~9 사이의 값을 입력해 주세요!");
 			}			
 		}
-		
-		for(int i : myArr) {
-			System.out.print(i + ", ");
-		}
-		System.out.println();
-		scan.close();
 	}
+	
+	//전부다 strike return false;
+	public boolean check() {
+		boolean result = true;
+		
+		
+		
+		return result;
+	}
+	
 	
 	public void gameStart() {
 		setRandomArr();
-		inputValueAndCheck();
+		do {
+			inputValue();	
+		} while(check());
+		scan.close();
+		System.out.println("게임 끝!!!!");
 	}
 }
 
