@@ -1,12 +1,10 @@
 package com.kr.first.algo;
 
 public class SortTest {
-
 	public static void main(String[] args) {
 		int[] arr = {5, 8, 11, 9, 3, 30, 22, 10};
 		bubbleSort(arr);
 		print(arr);
-
 	}
 	
 	public static void bubbleSort(int[] arr) {
