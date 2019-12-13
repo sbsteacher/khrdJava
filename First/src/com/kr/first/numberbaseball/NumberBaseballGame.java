@@ -38,6 +38,8 @@ public class NumberBaseballGame {
 	
 	
 	private void inputValue() {
+		myArr = new int[myArr.length];
+		
 		PARENT: for(int i=0; i<myArr.length; i++) {
 			System.out.printf("숫자 (%d) :", (i+1));
 			int no = Utils.parseStringToInt(scan.next(), 0);
@@ -60,21 +62,40 @@ public class NumberBaseballGame {
 	
 	//전부다 strike return false;
 	public boolean check() {
-		boolean result = true;
+		boolean result = true;		
+		int s = 0;
+		int b = 0;
+		for(int i=0; i<rArr.length; i++) {			
+			for(int z=0; z<myArr.length; z++) {
+				if(rArr[i] == myArr[z]) {					
+					if(i == z) {
+						s++;
+					} else {
+						b++;
+					}
+				}
+			}
+		}
 		
+		System.out.printf("S:%d, B:%d, O:%d\n", s, b, myArr.length - (s + b));
 		
-		
+		if(s == myArr.length) {
+			result = false;
+		}
 		return result;
 	}
 	
 	
 	public void gameStart() {
 		setRandomArr();
+		int cnt = 0;
 		do {
+			cnt++;
 			inputValue();	
 		} while(check());
 		scan.close();
 		System.out.println("게임 끝!!!!");
+		System.out.printf("%d번에 성공!!", cnt);
 	}
 }
 
