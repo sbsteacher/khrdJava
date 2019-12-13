@@ -2,7 +2,6 @@ package com.kr.first.blackjack;
 
 public class Gamer {
 	private final Card[] myCards;
-	private int sum;
 	
 	public Gamer() {
 		myCards = new Card[49];
@@ -22,15 +21,25 @@ public class Gamer {
 	}
 	
 	public int getSum() {
+		int sum = 0;
+		for(int i=0; i<myCards.length; i++) {
+			if(myCards[i] != null) {
+				sum += myCards[i].getPoint();
+			} else {
+				break;
+			}
+		}
 		return sum;
 	}
 	
 	public void open() {
-		sum = 0;
+		int sum = 0;
 		for(int i=0; i<myCards.length; i++) {
 			if(myCards[i] != null) {
 				System.out.println(myCards[i]);
 				sum += myCards[i].getPoint();	
+			} else {
+				break;
 			}
 			
 		}

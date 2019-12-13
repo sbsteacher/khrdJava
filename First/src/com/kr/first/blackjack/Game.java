@@ -12,13 +12,13 @@ public class Game {
 		gamer.saveCard(cd.pick());
 		dealer.saveCard(cd.pick());
 		
+		dealer.moreCard(cd);
+		
 		System.out.println("--- 게이머 --- ");
 		gamer.open();
 		
 		System.out.println("--- 딜러 --- ");
 		dealer.open();
-		
-		
 	}
 
 }
