@@ -9,7 +9,7 @@ public class Card {
 	private final String no;
 	private final int point;
 	
-	private static String[] shapes = {"스페이드", "하트", "클로버", "다이아몬드"};
+	public static final String[] SHAPES = {"스페이드", "하트", "클로버", "다이아몬드"};
 	
 	//bigIdx 0~3 (0:스페이드, 1:하트, 2:클로버, 3:다이아몬드)
 	//smallIdx 1~13 (1: no-A, point-1, 2: no-2, point-2
@@ -17,7 +17,7 @@ public class Card {
 	//.... (11: no-J, point-10, 12: no-Q, point-10, 13:no-K, point-10)
 	public Card(int bigIdx, int smallIdx) {
 		super();
-		shape = shapes[bigIdx];
+		shape = SHAPES[bigIdx];
 		
 		if(smallIdx <= 10) {
 			point = smallIdx;
@@ -41,6 +41,10 @@ public class Card {
 				break;
 			}
 		}
+	}
+	
+	public int getPoint() {
+		return point;
 	}
 	
 	@Override
