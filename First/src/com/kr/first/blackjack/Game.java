@@ -28,12 +28,17 @@ public class Game {
 		}
 		scan.close();
 		
-		
-		System.out.println("--- 게이머 --- ");
-		gamer.open();
-		
-		System.out.println("--- 딜러 --- ");
-		dealer.open();
+		Rule.whoIsWin(dealer, gamer);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
