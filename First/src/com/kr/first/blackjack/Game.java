@@ -16,7 +16,7 @@ public class Game {
 		
 		dealer.moreCard(cd);
 		
-		//카드를 계속 받을 수 있도록 내가 더 받기 싫을 때 까지!!!!
+		//카드를 계속 받을 수 있도록 내가 더 받기 싫을 때까지!!!!
 		Scanner scan = new Scanner(System.in);
 		while(true) {
 			gamer.open();
