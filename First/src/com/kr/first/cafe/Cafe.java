@@ -6,5 +6,9 @@ public class Cafe {
 		Customer customer = new Customer();
 		
 		MenuItem mi = customer.order(mt);
+		if(mi == null) {
+			System.out.println("주문 종료!");
+			return;
+		}
 	}
 }

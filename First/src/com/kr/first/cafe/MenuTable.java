@@ -12,6 +12,7 @@ public class MenuTable {
 		list.add(new MenuItem("카푸치노", 2000));
 		list.add(new MenuItem("카라멜 마키아또", 2500));
 		list.add(new MenuItem("에스프레소", 2500));
+		list.add(new MenuItem("딸기스무디", 3000));
 	}
 	
 	public void showMenus() {
@@ -19,6 +20,13 @@ public class MenuTable {
 			MenuItem mi = list.get(i);
 			System.out.printf("%d. %s (%,d원)\n", i+1, mi.getNm(), mi.getPrice());
 		}
+	}
+	
+	public MenuItem choice(int menuNo) {
+		if(menuNo <= 0 || menuNo > list.size()) {
+			return null;
+		}
+		return list.get(menuNo - 1);
 	}
 }
 
