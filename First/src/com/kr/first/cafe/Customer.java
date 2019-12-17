@@ -15,7 +15,7 @@ public class Customer {
 		mt.showMenus();
 		MenuItem mi = null;		
 		do {
-			System.out.print("메뉴를 선택해 주세요 (종료: 0)");
+			System.out.print("메뉴를 선택해 주세요 (종료: 0) ");
 			int menuNo = Utils.parseStringToInt(scan.next(), -5000);
 			if(menuNo == -5000) {
 				System.out.println("정수만 입력해 주세요");				

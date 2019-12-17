@@ -8,11 +8,12 @@ public class MenuTable {
 	
 	public MenuTable() {
 		list = new ArrayList();
-		list.add(new MenuItem("아메리카노", 1500));
-		list.add(new MenuItem("카푸치노", 2000));
-		list.add(new MenuItem("카라멜 마키아또", 2500));
-		list.add(new MenuItem("에스프레소", 2500));
-		list.add(new MenuItem("딸기스무디", 3000));
+		List<CoffeeVO> dbList = DBApi.getCoffeeList();
+		
+		for(CoffeeVO vo : dbList) {
+			list.add(new MenuItem(vo.getNm(), vo.getPrice()));
+		}
+		
 	}
 	
 	public void showMenus() {
